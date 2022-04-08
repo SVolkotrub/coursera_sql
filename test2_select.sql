@@ -1,4 +1,5 @@
 select * from employees;
+select * from departments;
 select EMP_ID, L_NAME, ADDRESS from employees where ADDRESS like '%Elgin,IL%';
 select EMP_ID, B_DATE from employees where B_DATE between '1970-01-01' and '1979-12-31';
 select EMP_ID, DEP_ID, L_NAME, SALARY from employees where DEP_ID= '5' AND (SALARY between 60000 and 70000);
