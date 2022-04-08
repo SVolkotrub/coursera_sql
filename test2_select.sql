@@ -1,0 +1,11 @@
+select * from employees;
+select EMP_ID, L_NAME, ADDRESS from employees where ADDRESS like '%Elgin,IL%';
+select EMP_ID, B_DATE from employees where B_DATE between '1970-01-01' and '1979-12-31';
+select EMP_ID, DEP_ID, L_NAME, SALARY from employees where DEP_ID= '5' AND (SALARY between 60000 and 70000);
+select EMP_ID, DEP_ID, L_NAME from employees order by DEP_ID;
+select EMP_ID, DEP_ID, L_NAME from employees order by DEP_ID desc, L_NAME DESC;
+select DEP_ID, count(EMP_ID) as result_sv from employees Group by DEP_ID; 
+select DEP_ID, count(EMP_ID) as count_empl, avg(SALARY) as avg_sal from employees Group by DEP_ID; 
+select DEP_ID, count(EMP_ID) as count_empl, avg(SALARY) as avg_sal from employees Group by DEP_ID order by avg_sal; 
+select DEP_ID, count(EMP_ID) as count_empl, avg(SALARY) as avg_sal from employees Group by DEP_ID having count(EMP_ID) > 3 order by avg_sal; 
+select employees.DEP_ID, employees.L_NAME, departments.DEP_NAME, departments.DEPT_ID_DEP from employees, departments where employees.DEP_ID= departments.DEPT_ID_DEP order by departments.DEP_NAME, employees.L_NAME DESC;
